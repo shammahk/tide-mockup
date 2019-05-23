@@ -1,0 +1,333 @@
+@import 'colours';
+@import 'components';
+@import 'variables';
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: helvetica;
+}
+
+*[class=pg-] {
+    width: 100vw;
+    position: relative;
+}
+section > header {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 50px;
+    max-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    position: absolute;
+    z-index: 1000;
+
+    .brand {
+        font-weight: bolder;
+        font-style: oblique;
+        text-decoration: underline;
+        text-decoration-color: $blue;
+
+        span {
+            color: $blue;
+        }
+    }
+
+    nav {
+        list-style-type: none;
+        display: flex;
+        flex-grow: 0;
+
+        li {
+            min-width: 70px;
+            height: 100%;
+            flex-grow: 1;
+            font-size: 0.7em;
+            margin-left: 15px;
+            line-height: 30px;
+            color: $blue;
+            text-align: center;
+            display: inline-block;
+            border: solid 1px transparent;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        li:hover {
+            background-color: $orange-bg;
+            border: solid 1px $peach;
+            cursor: pointer;
+        }
+    }
+}
+
+section.pg-one {
+    height: 125vh;
+    position: relative;
+
+    div.image-holder {
+        @extend %text-cont;
+        background-image: url(../images/house-8.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+        min-width: 80%;
+        max-width: 90%;
+        height: 60%;
+        float: right;
+        clear: both;
+    }
+
+    div.cont {
+        background: url(../images/pexels-photo-843266.jpeg) no-repeat ;
+        background-size: cover;
+        border-radius: 15px 10px 15px 10px;
+        @extend %text-cont;
+        min-width: 100%;
+        height: 40%;
+        justify-content: center;
+        border-top: solid 1px $blue;
+
+        div.center {
+            padding-top: 10px;
+            transform: translateX(100px);
+
+            h5 {
+                color: $black;
+            }
+
+            h1 {
+                color: $green;
+                font-size: x-large;
+            }
+            
+            button {
+                background: $peach;
+            }
+
+            button:hover {
+                background: $white;
+                color: $peach;
+                border: solid 1px $peach;
+            }
+        }
+    }
+}
+
+section.pg-two, %grid-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    height: 60vh;
+    padding-top: 30px;
+    border: solid 1px $peach;
+    // border-bottom: none !important;
+    // position: relative;
+
+    div.left {
+        height: 105%;
+        display: flex;
+        align-items: center;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 75%, 85% 80%, 80% 85%, 65% 90%, 0% 100%);
+
+        img {
+            width: 90%;
+            height: 100%;
+            object-fit: fill;
+        }
+    }
+
+    div.right {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 70%;
+        color: $black;
+        margin-top: 30px;
+        h5 {
+            font-size: 0.8em; 
+            font-weight: 500; 
+        }
+
+        > h1 {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+section.pg-three {
+    @extend %grid-page;
+    height: 115vh;
+    position: relative;
+    padding-top: 0px;
+    border-top: none !important;
+    border: solid 1px $green;
+    background: linear-gradient(to bottom, rgba(255,255,255), $white);
+
+    div.image-cont{
+        position: relative;
+        padding-right: 10px;
+        max-width: 50%;
+        div.clipped {
+            width: 100%; 
+            height: 100%;
+            // clip-path: polygon(100% 0%, 100% 100%, 30% 85%, 20% 80%, 00% 65%, 0% 0%);
+            img {
+                border: solid 1px $green;
+             border-radius: 10px;
+             width: 100%;
+             height: 100%; 
+             object-fit: fill;
+            } 
+        }  
+    }
+}
+
+section.footer {
+    height: 50vh;
+    background: $brown;
+    position: relative;
+
+    div.tag {
+        top: -25% ;
+        position: relative;
+        background: $orange;
+        height: 200px;
+        width: 80%;
+        border-radius:  0 35px 35px 0;
+        padding-left: 20%;
+        display: flex;
+        color: $white;
+        line-height: 20px;
+        justify-content: space-around;
+        align-items: center;
+
+        p {
+            font-weight: lighter;
+            font-size: 0.7em;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: x-large;
+        }
+
+        div {
+            height: 100%;
+            padding-top: 20px;
+        }
+
+        button {
+            @extend %button;
+            background: $peach;
+        }
+
+        button:hover {
+            background: $white;
+            color: $peach;
+            border-color: $peach;
+        }
+
+        div.circle.large.orange {
+            left: 20px;
+            bottom: -50px;
+        }
+
+        div.circle.medium.peach {
+            top: -10px;
+        }
+
+        div.circle.small.peach {
+            right: 50px;
+            bottom: -10px;
+        }
+    }
+
+    div.foot {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .brand {
+            font-weight: bolder;
+            font-style: oblique;
+            text-decoration: underline;
+            text-decoration-color: $blue;
+            color: $white;
+    
+            span {
+                color: $blue;
+            }
+        }
+
+        nav {
+            list-style-type: none;
+            font-size: 0.7em;
+            color: $white;
+
+            li {
+                min-height: 20px;
+                min-width: 70px;
+                text-align: center;
+                line-height: 20px;
+                margin: 10px 0;
+                display: block;
+                border: solid 1px transparent;
+                border-radius: 20px;
+                transition: 0.3s;
+            }
+    
+            li:hover {
+                background-color: $orange-bg;
+                color: $peach;
+                border: solid 1px $peach;
+                cursor: pointer;
+            }
+
+
+        }
+
+        div.input {
+            display: flex;
+            align-items: center;
+            border: solid 1px $white;
+            height: 30px;
+            min-width: 300px;;
+            border-radius: 15px;
+            padding: 0 2px;
+            overflow: hidden;
+
+            input {
+                outline: none;
+                border: none;
+                padding-left: 5px;
+                background: transparent;
+                max-height: 90%;
+            }
+
+            button {
+                @extend %button;
+                max-height: 90%;
+                width: fit-content;
+                border: none;
+                margin: 0;
+                background: $peach;
+            }
+
+            button:hover {
+                background: $white;
+                color: $peach;
+
+            }
+        }
+    }
+}

@@ -1,0 +1,201 @@
+*::-webkit-scrollbar {
+    width: 8px;
+    background: #f5f5f5;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: white;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.5);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: $peach;
+    border-radius: 10px; 
+    width: 8px;
+}
+
+*::-webkit-scrollbar-button {
+    display: none;
+}
+
+%text-cont {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+}
+
+%button {
+    border: none;
+    color: $white;
+    background: $green;
+    border: solid 1px $white;
+    border-radius: 15px;
+    font-size: 0.7em;
+    min-width: 120px;
+    height: 30px;
+    margin-top: 15px;
+    transition: .3s;
+}
+
+div.text, %text {
+    min-height: 80%;
+    padding-top: 20px;
+    h1 {
+        color: $peach;
+        font-weight: bolder; 
+        font-size: xx-large;
+    }
+
+    h5 {
+        font-weight: 500;
+        font-size: 0.7em;
+        line-height: 20px;
+    }
+
+    button{ 
+        @extend %button;
+    }
+
+    button:hover {
+        background: $white;
+        color: $green;
+        border: solid 1px $green;
+    }
+}     
+
+section.pg-two > div.right {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        grid-template-rows:  repeat(2, minmax(200px, 1fr));
+        margin-top: 10px; 
+        .card {
+            div.logo {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex; 
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    object-fit: fill;
+                }
+            } 
+
+            div.peach {
+                background: $peach-bg;
+            }
+
+            div.green {
+                background: $green-bg;
+            }
+
+            div.blue {
+                background: $blue-bg;
+            }
+
+            div.orange {
+                background: $orange-bg;
+            }
+
+            h5 {
+                font-size: 0.7em;
+            } 
+        }  
+    } 
+} 
+
+.peach {
+    color: $peach; 
+}
+
+.green {
+    color: $green;
+}
+
+.blue {
+    color: $blue;
+}
+
+.orange {
+    color: $orange;
+}
+
+section.pg-three > .text-cont {
+    margin: 20px 0 0;
+    // display: flex; 
+    // flex-flow: column ; 
+    color: $black;
+    padding: 0 50px 0 150px; 
+    // border: solid red; 
+
+    h1 {
+        margin-bottom: 30px;
+    } 
+    
+    > div.cards {
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(3, 150px);
+  
+        .card {
+            border-top: solid 5px;
+            border-radius: 5px;
+            margin-bottom: 50px; 
+            background: white; 
+            padding-left: 20px;
+            // height: 100px;
+
+            p{
+                font-size: 0.7em;
+                color: $black;
+            } 
+        }
+    }
+
+}
+
+%circle {
+    border-radius: 50%;
+    position: absolute;
+}
+
+div.circle.large {
+    @extend %circle;
+    height: 200px !important;
+    width: 200px;
+}
+
+div.circle.medium {
+    @extend %circle;
+    height: 100px !important;
+    width: 100px; 
+}
+
+div.circle.small {
+    @extend %circle;
+    height: 50px !important;
+    width: 50px; 
+}
+
+div.circle.peach {
+    background: $circle-peach;
+}
+
+div.circle.green {
+    background: $circle-green;
+} 
+
+div.circle.blue {
+    background: $circle-blue; 
+}
+
+div.circle.orange {
+    background: $circle-orange;
+}
